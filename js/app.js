@@ -2,48 +2,49 @@
 
 
 let openingHours = [`6am`, `7am`, `8am`, `9am`, `10am`, `11am`, `12pm`, `1pm`, `2pm`, `3pm`, `4pm`, `5pm`, `6pm`, `7pm`];
-const fishCookie = document.getElementById(`fishCookie`);
+let fishCookie = document.getElementById(`fishCookie`);
 
 
-let seattle = {
+const seattle = {
     location: `Seattle`,
     avgCookie: 6.3,
     cInHour: 0,
-    finalresult:[],
+    finalresult: [],
     minClient: 23,
     maxClient: 65,
     total: 0,
 
-    getCookie : function(){
-        
+    getCookie: function () {
+
         for (let i = 0; i < openingHours.length; i++) {
-            let randAvgNum = Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie)      
-            // console.log(Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie))
-            this.finalresult.push(Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie))
-            this.total += randAvgNum ;
-            console.log(this.total)
-            // console.log(this.finalresult[i])
-            return this.total ;
-    }
-},
-    outputToHTML: function(){
-    const h2Element = document.createElement(`h2`);
+
+            let randAvgNum = Math.ceil(random(this.minClient, this.maxClient)*this.avgCookie)
+            this.finalresult.push(randAvgNum);
+            this.total += this.finalresult[i];
+            // console.log(this.total);
+            
+        }
+        
+        return this.total ;
+    },
+    outputToHTML: function () {
+        let h2Element = document.createElement(`h2`);
         h2Element.textContent = this.location;
         fishCookie.appendChild(h2Element);
-    const ulElement = document.createElement(`ul`);
-    fishCookie.appendChild(ulElement);
+        let ulElement = document.createElement(`ul`);
+        fishCookie.appendChild(ulElement);
 
-    for (let i = 0; i < openingHours.length; i++) {
-        const liElement = document.createElement(`li`);
-        // liElement.textContent = openingHours[i] + `: ` + this.finalresult[i] + ` Cookies.`;
-        liElement.textContent = ` ${openingHours[i]}: ${Math.ceil(random(this.minClient,this.maxClient) * this.avgCookie)} Cookies.`
-        ulElement.appendChild(liElement);
-        // console.log(ulElement)
-        
-    }
-            const liTotal =document.createElement(`li`)
-                liTotal.textContent = `${this.total} cookies`
-                ulElement.appendChild(liTotal)
+        for (let i = 0; i < openingHours.length; i++) {
+           let liElement = document.createElement(`li`);
+            // liElement.textContent = openingHours[i] + `: ` + this.finalresult[i] + ` Cookies.`;
+            liElement.textContent = ` ${openingHours[i]}: ${Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie)} Cookies.`
+            ulElement.appendChild(liElement);
+            // console.log(ulElement)
+
+        }
+        let liTotal = document.createElement(`li`)
+        liTotal.textContent = `Total: ${this.total} cookies`
+        ulElement.appendChild(liTotal)
     }
 
 }
@@ -64,36 +65,37 @@ const tokyo = {
     maxClient: 24,
     total: 0,
 
-    getCookie : function(){
-        
+    getCookie: function () {
+
         for (let i = 0; i < openingHours.length; i++) {
-            let randAvgNum = Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie)      
+            let randAvgNum = Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie)
             // console.log(Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie))
-            this.finalresult.push(Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie))
-            this.total += randAvgNum ;
+            this.finalresult.push(Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie))
+            this.total += randAvgNum;
             console.log(this.total)
             // console.log(this.finalresult[i])
-            return this.total ;
-    }
-},
-    outputToHTML: function(){
-    const h2Element = document.createElement(`h2`);
+           
+        }
+        return this.total;
+    },
+    outputToHTML: function () {
+        let h2Element = document.createElement(`h2`);
         h2Element.textContent = this.location;
         fishCookie.appendChild(h2Element);
-    const ulElement = document.createElement(`ul`);
-    fishCookie.appendChild(ulElement);
+        let ulElement = document.createElement(`ul`);
+        fishCookie.appendChild(ulElement);
 
-    for (let i = 0; i < openingHours.length; i++) {
-        const liElement = document.createElement(`li`);
-        // liElement.textContent = openingHours[i] + `: ` + this.finalresult[i] + ` Cookies.`;
-        liElement.textContent = ` ${openingHours[i]}: ${Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie)} Cookies.`
-        ulElement.appendChild(liElement);
-        // console.log(ulElement)
-        
-    }
-            const liTotal =document.createElement(`li`)
-                liTotal.textContent = `${this.total} cookies`
-                ulElement.appendChild(liTotal)
+        for (let i = 0; i < openingHours.length; i++) {
+            let liElement = document.createElement(`li`);
+            // liElement.textContent = openingHours[i] + `: ` + this.finalresult[i] + ` Cookies.`;
+            liElement.textContent = ` ${openingHours[i]}: ${Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie)} Cookies.`
+            ulElement.appendChild(liElement);
+            // console.log(ulElement)
+
+        }
+        let liTotal = document.createElement(`li`)
+        liTotal.textContent = `Total is: ${this.total} cookies`
+        ulElement.appendChild(liTotal)
     }
 }
 tokyo.getCookie();
@@ -108,41 +110,42 @@ const dubai = {
     maxClient: 38,
     total: 0,
 
-    getCookie : function(){
-        
+    getCookie: function () {
+
         for (let i = 0; i < openingHours.length; i++) {
-            let randAvgNum = Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie)      
+            let randAvgNum = Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie)
             // console.log(Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie))
-            this.finalresult.push(Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie))
+            this.finalresult.push(Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie))
             this.total += randAvgNum ;
             console.log(this.total)
             // console.log(this.finalresult[i])
-            return this.total ;
-    }
-},
-    outputToHTML: function(){
-    const h2Element = document.createElement(`h2`);
+           
+        }
+        return this.total ;
+    },
+    outputToHTML: function () {
+        let h2Element = document.createElement(`h2`);
         h2Element.textContent = this.location;
         fishCookie.appendChild(h2Element);
-    const ulElement = document.createElement(`ul`);
-    fishCookie.appendChild(ulElement);
+        let ulElement = document.createElement(`ul`);
+        fishCookie.appendChild(ulElement);
 
-    for (let i = 0; i < openingHours.length; i++) {
-        const liElement = document.createElement(`li`);
-        // liElement.textContent = openingHours[i] + `: ` + this.finalresult[i] + ` Cookies.`;
-        liElement.textContent = ` ${openingHours[i]}: ${Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie)} Cookies.`
-        ulElement.appendChild(liElement);
-        // console.log(ulElement)
-        
-    }
-            const liTotal =document.createElement(`li`)
-                liTotal.textContent = `${this.total} cookies`
-                ulElement.appendChild(liTotal)
+        for (let i = 0; i < openingHours.length; i++) {
+            let liElement = document.createElement(`li`);
+            // liElement.textContent = openingHours[i] + `: ` + this.finalresult[i] + ` Cookies.`;
+            liElement.textContent = ` ${openingHours[i]}: ${Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie)} Cookies.`
+            ulElement.appendChild(liElement);
+            // console.log(ulElement)
+
+        }
+        let liTotal = document.createElement(`li`)
+        liTotal.textContent = `Total is: ${this.total} cookies`
+        ulElement.appendChild(liTotal)
     }
 
 }
- dubai.getCookie();
- dubai.outputToHTML();
+dubai.getCookie();
+dubai.outputToHTML();
 
 const paris = {
     location: `paris`,
@@ -153,41 +156,42 @@ const paris = {
     maxClient: 38,
     total: 0,
 
-    getCookie : function(){
-        
+    getCookie: function () {
+
         for (let i = 0; i < openingHours.length; i++) {
-            let randAvgNum = Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie)      
+            let randAvgNum = Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie)
             // console.log(Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie))
-            this.finalresult.push(Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie))
-            this.total += randAvgNum ;
+            this.finalresult.push(Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie))
+            this.total += randAvgNum;
             console.log(this.total)
             // console.log(this.finalresult[i])
-            return this.total ;
-    }
-},
-    outputToHTML: function(){
-    const h2Element = document.createElement(`h2`);
+           
+        }
+        return this.total;
+    },
+    outputToHTML: function () {
+        let h2Element = document.createElement(`h2`);
         h2Element.textContent = this.location;
         fishCookie.appendChild(h2Element);
-    const ulElement = document.createElement(`ul`);
-    fishCookie.appendChild(ulElement);
+        let ulElement = document.createElement(`ul`);
+        fishCookie.appendChild(ulElement);
 
-    for (let i = 0; i < openingHours.length; i++) {
-        const liElement = document.createElement(`li`);
-        // liElement.textContent = openingHours[i] + `: ` + this.finalresult[i] + ` Cookies.`;
-        liElement.textContent = ` ${openingHours[i]}: ${Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie)} Cookies.`
-        ulElement.appendChild(liElement);
-        // console.log(ulElement)
-        
-    }
-            const liTotal =document.createElement(`li`)
-                liTotal.textContent = `${this.total} cookies`
-                ulElement.appendChild(liTotal)
+        for (let i = 0; i < openingHours.length; i++) {
+            let liElement = document.createElement(`li`);
+            // liElement.textContent = openingHours[i] + `: ` + this.finalresult[i] + ` Cookies.`;
+            liElement.textContent = ` ${openingHours[i]}: ${Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie)} Cookies.`
+            ulElement.appendChild(liElement);
+            // console.log(ulElement)
+
+        }
+        let liTotal = document.createElement(`li`)
+        liTotal.textContent = `Total is: ${this.total} cookies`
+        ulElement.appendChild(liTotal)
     }
 
 }
- paris.getCookie();
- paris.outputToHTML();
+paris.getCookie();
+paris.outputToHTML();
 
 const lima = {
     location: `lima`,
@@ -198,38 +202,37 @@ const lima = {
     minClient: 2,
     total: 0,
 
-    getCookie : function(){
-        
+    getCookie: function () {
+
         for (let i = 0; i < openingHours.length; i++) {
-            let randAvgNum = Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie)      
-            // console.log(Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie))
-            this.finalresult.push(Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie))
-            this.total += randAvgNum ;
-            console.log(this.total)
-            // console.log(this.finalresult[i])
-            return this.total ;
-    }
-},
-    outputToHTML: function(){
-    const h2Element = document.createElement(`h2`);
+            let randAvgNum = Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie)
+            this.finalresult.push(Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie))
+            this.total += randAvgNum;
+  
+        }
+        return this.total;
+    },
+
+    outputToHTML: function () {
+        let h2Element = document.createElement(`h2`);
         h2Element.textContent = this.location;
         fishCookie.appendChild(h2Element);
-    const ulElement = document.createElement(`ul`);
-    fishCookie.appendChild(ulElement);
+        let ulElement = document.createElement(`ul`);
+        fishCookie.appendChild(ulElement);
 
-    for (let i = 0; i < openingHours.length; i++) {
-        const liElement = document.createElement(`li`);
-        // liElement.textContent = openingHours[i] + `: ` + this.finalresult[i] + ` Cookies.`;
-        liElement.textContent = ` ${openingHours[i]}: ${Math.ceil(random(this.minClient,this.maxClient) *this.avgCookie)} Cookies.`
-        ulElement.appendChild(liElement);
-        // console.log(ulElement)
-        
+        for (let i = 0; i < openingHours.length; i++) {
+            let liElement = document.createElement(`li`);
+            // liElement.textContent = openingHours[i] + `: ` + this.finalresult[i] + ` Cookies.`;
+            liElement.textContent = ` ${openingHours[i]}: ${Math.ceil(random(this.minClient, this.maxClient) * this.avgCookie)} Cookies.`
+            ulElement.appendChild(liElement);
+            // console.log(ulElement)
+
+        }
+        let liTotal = document.createElement(`li`);
+        liTotal.textContent = `Total is: ${this.total} cookies`;
+        ulElement.appendChild(liTotal);
     }
-            const liTotal =document.createElement(`li`)
-                liTotal.textContent = `${this.total} cookies`
-                ulElement.appendChild(liTotal)
-    }
-    }
+}
 
 lima.getCookie();
 lima.outputToHTML();
@@ -239,8 +242,7 @@ function random(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-  }
-
+}
 
 
 
